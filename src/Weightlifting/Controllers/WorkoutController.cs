@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,7 @@ using Weightlifting.Models.ViewModels;
 
 namespace Weightlifting.Controllers
 {
+    [Authorize]
     public class WorkoutController : Controller
     {
         private readonly IWorkoutService _workoutService;

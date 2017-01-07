@@ -241,6 +241,7 @@
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Program.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\RouteConfig.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Startup.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Controllers\AccountController.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Controllers\ExerciseController.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Controllers\HomeController.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Controllers\WorkoutController.cs
@@ -248,8 +249,11 @@ D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightli
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\AutoMapper\MappingProfile.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Repository\IRepository.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Repository\Repository.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\IEmailSender.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\IService.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\ISmsSender.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\IWorkoutService.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\MessageServices.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\Service.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Data\Service\WorkoutService.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20161218023021_MyFirstMigration.cs
@@ -260,12 +264,24 @@ D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightli
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20161219143756_AddWorkoutName.Designer.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20161219144631_AddSetReps.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20161219144631_AddSetReps.Designer.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20170107204330_Add ApplicationUser.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20170107204330_Add ApplicationUser.Designer.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20170107205229_Add ApplicationUser class.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\20170107205229_Add ApplicationUser class.Designer.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Migrations\WeightliftingContextModelSnapshot.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ApplicationUser.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\Exercise.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\Set.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\WeightliftingContext.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\Workout.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\ExerciseViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\ExternalLoginConfirmationViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\ForgotPasswordViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\LoginViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\RegisterViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\ResetPasswordViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\SendCodeViewModel.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\SetViewModel.cs
+D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\VerifyCodeViewModel.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\WorkoutDetailsViewModel.cs
 D:\clhereistian\Documents\Visual Studio 2015\Projects\Weightlifting\src\Weightlifting\Models\ViewModels\WorkoutViewModel.cs

@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using WebApplication2.Services;
 using Weightlifting.Data.Repository;
 using Weightlifting.Data.Service;
 using Weightlifting.Models;
@@ -18,7 +20,11 @@ namespace Weightlifting
         {
             var con = @"Server=(localdb)\mssqllocaldb;Database=Weightlifting;Trusted_Connection=True;";
 
-            services.AddDbContext<WeightliftingContext>(options => options.UseSqlServer(con));            
+            services.AddDbContext<WeightliftingContext>(options => options.UseSqlServer(con));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                    .AddEntityFrameworkStores<WeightliftingContext>()
+                    .AddDefaultTokenProviders();
 
             services.AddMvc();
             services.AddAutoMapper();
@@ -26,6 +32,9 @@ namespace Weightlifting
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped(typeof(IService<>), typeof(Service<>));
             services.AddScoped(typeof(IWorkoutService), typeof(WorkoutService));
+
+            services.AddTransient<IEmailSender, AuthMessageSender>();
+            services.AddTransient<ISmsSender, AuthMessageSender>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +48,8 @@ namespace Weightlifting
             }
 
             app.UseStaticFiles();
+
+            app.UseIdentity();
 
             app.UseMvc(RouteConfig.RegisterRoutes);
         }

@@ -8,9 +8,10 @@ using Weightlifting.Models;
 namespace Weightlifting.Migrations
 {
     [DbContext(typeof(WeightliftingContext))]
-    partial class WeightliftingContextModelSnapshot : ModelSnapshot
+    [Migration("20170107205229_Add ApplicationUser class")]
+    partial class AddApplicationUserclass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
