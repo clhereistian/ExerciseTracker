@@ -1,0 +1,77 @@
+@model Weightlifting.Models.ViewModels.WorkoutDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Workout Details</h2>
+
+<div>
+    <div class="row">
+       
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Workout.Date)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Workout.Date)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Workout.Name)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Workout.Name)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Workout.Description)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Workout.Description)
+            </dd>          
+        </dl>
+    </div>
+    <div class="row">
+        <h3>Exercises</h3>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Sets</th>
+                </tr>
+            </thead>
+            @foreach (var exercise in Model.Exercises)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(setItem => exercise.Name)</td>
+                    <td>@Html.DisplayFor(setItem => exercise.Description)</td>
+                    <td><a href="#" class="set-details" data-id="@exercise.Id" data-toggle="tooltip" title="View Set Details"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> @exercise.Sets.Count Sets</a></td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+<div>
+    <a asp-action="Index"><span class="glyphicon glyphicon-arrow-left"></span> Back</a>       
+</div>
+
+<div class="modal fade" id="set-details-modal" role="dialog" aria-hidden="true">
+    <div id="set-details-container"></div>
+</div>
+
+@section Scripts
+{   
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('.set-details').click(function () {
+            var url = "/Workout/ExerciseDetails";
+            var workoutId = @Model.Workout.Id;
+            var exerciseId = $(this).attr('data-id');
+            $.get(url + '/' + workoutId + '/' + exerciseId, function (data) {
+                $('#set-details-container').html(data);
+                $('#set-details-modal').modal('show');
+            });
+        });
+     });
+</script>
+}

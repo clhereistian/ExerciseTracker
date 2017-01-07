@@ -1,0 +1,24 @@
+@model Weightlifting.Models.ViewModels.ExerciseViewModel
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4 id="myModalLabel">@Html.DisplayFor(model => model.Name)</h4>
+        </div>
+
+        <div class="modal-body">
+            <p>@Html.DisplayFor(model => model.Sets.FirstOrDefault().Workout.Name) on @Html.DisplayFor(model => model.Sets.FirstOrDefault().Workout.Date)</p>
+            <ul class="list-group">
+                @*@foreach (var set in Model.Sets)*@
+                @for (var i = 0; i < Model.Sets.Count; i++)
+                {
+                    var setNum = i + 1;
+                    <li class="list-group-item">Set @setNum - @Model.Sets[i].Reps reps at @Model.Sets[i].Weight pounds</li>
+                }
+            </ul>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>

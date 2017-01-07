@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Exercise>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Description </th>
+    </tr>
+
+    @foreach (var exercise in Model)
+    { 
+        <tr>
+            <td>
+                @Html.DisplayFor(e => exercise.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(e => exercise.Description)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,74 @@
+@model Weightlifting.Models.ViewModels.WorkoutViewModel
+
+@{
+    ViewData["Title"] = "Edit Workout";
+}
+
+<h2>Edit Workout</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Date" />
+        <div class="form-group">
+            <label asp-for="Date" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sets" class="col-md-2 control-label">Sets</label>
+            <div class="col-md-10">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Exercise
+                            </th>
+                            <th>
+                                Reps
+                            </th>
+                            <th>
+                                Weight
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (var i = 0; i < Model.Sets.Count; i++)
+                        {
+                            <tr>
+                                <td>
+                                    <input type="hidden" asp-for="@Model.Sets[i].Id" />
+                                    <select asp-for="@Model.Sets[i].ExerciseId" asp-items="ViewBag.Exercises" class="form-control"></select>
+                                </td>
+                                <td><input asp-for="@Model.Sets[i].Reps" class="form-control" /></td>
+                                <td><input asp-for="@Model.Sets[i].Weight" class="form-control" /></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>

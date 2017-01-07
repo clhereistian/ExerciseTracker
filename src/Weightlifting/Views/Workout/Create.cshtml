@@ -1,0 +1,108 @@
+@model Weightlifting.Models.ViewModels.WorkoutViewModel
+
+@{
+    ViewData["Title"] = "Add Workout";
+}
+
+<h2>Add Workout</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Date" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger" />
+            </div>
+        </div>        
+        <div class="form-group">           
+            <fieldset class="form-add-set">
+                <label for="sets" class="col-md-2 control-label">Sets</label>
+                <div class="col-md-10">
+                    <div class="add-sets">
+                        <div class="form-inline add-set">
+                            <div class="form-group">
+                                <label class="control-label">Exercise</label>
+                                <select name="Sets[0].ExerciseId" class="form-control" asp-items="ViewBag.Exercises"></select>             
+                            </div>
+                            <div class="form-group">                                                               
+                                    <label class="control-label"></label>
+                                    <input asp-for="Sets[0].Reps" placeholder="Reps" class="form-control set-reps" />                                                           
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <input asp-for="Sets[0].Weight" class="form-control set-weight" />                               
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-remove-set" data-toggle="tooltip" title="Remove Set"><span class="glyphicon glyphicon-minus"></span></button>
+                            </div>
+                        </div>                    
+                    </div>
+                    <button class="btn btn-add-set">Add Set</button>
+                </div>
+            </fieldset>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn">Cancel</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+<script type="text/javascript">
+    $(document).ready(function () {     
+        var wrapper = $('.add-sets');
+
+        $(".btn-add-set").click(function(e) {
+            e.preventDefault();
+            var newNode = $('.add-set:first-child').clone(true);
+            var index = $('.add-set').length;
+            setName(newNode, index);           
+            newNode.appendTo(wrapper);
+            $('.add-set .btn-remove-set').show();
+        });
+
+        $('.btn-remove-set').click(function (e) {
+            e.preventDefault();
+            $(this).parents('.add-set').remove();
+            var a = $('.add-set');
+
+            for (var i = 0; i < a.length; i++) {
+                setName(a[i], i);
+            }
+
+            removeButton();
+        });
+
+        function removeButton() {
+            if ($('.add-set').length == 1) {
+                $('.add-set .btn-remove-set').hide();
+            }
+        }
+
+        function setName(parentNode, index) {
+            $('select', parentNode).attr('name', 'Sets[' + index + '].ExerciseId');
+            $('.set-reps', parentNode).attr('name', 'Sets[' + index + '].Reps');
+            $('.set-weight', parentNode).attr('name', 'Sets[' + index + '].Weight');
+        }
+    });
+</script>
+}
