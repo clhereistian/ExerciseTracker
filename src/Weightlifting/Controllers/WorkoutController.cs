@@ -36,14 +36,9 @@ namespace Weightlifting.Controllers
         }
 
         // GET: Workout/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var workout = await _workoutService.GetWithExercisesAsync((int)id);
+        public async Task<IActionResult> Details(int id)
+        {           
+            var workout = await _workoutService.GetWithExercisesAsync(id);
 
             if (workout == null)
             {

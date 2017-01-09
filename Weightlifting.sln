@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Weightlifting", "src\Weightlifting\Weightlifting.xproj", "{231793C6-DF94-4D1F-AB3A-274242C0E454}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7527A9DF-2399-41B2-A413-33E3141295B5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Weightlifting.Test", "test\Weightlifting.Tests\Weightlifting.Test\Weightlifting.Test.xproj", "{31F7118A-3F98-428F-81C3-3A6FE4DACA2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{231793C6-DF94-4D1F-AB3A-274242C0E454}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{231793C6-DF94-4D1F-AB3A-274242C0E454}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{231793C6-DF94-4D1F-AB3A-274242C0E454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F7118A-3F98-428F-81C3-3A6FE4DACA2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F7118A-3F98-428F-81C3-3A6FE4DACA2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F7118A-3F98-428F-81C3-3A6FE4DACA2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F7118A-3F98-428F-81C3-3A6FE4DACA2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{231793C6-DF94-4D1F-AB3A-274242C0E454} = {53EDF2B8-8F04-4755-8C54-9049DBDBC4DE}
+		{31F7118A-3F98-428F-81C3-3A6FE4DACA2F} = {7527A9DF-2399-41B2-A413-33E3141295B5}
 	EndGlobalSection
 EndGlobal

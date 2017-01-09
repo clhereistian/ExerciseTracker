@@ -1,6 +1,6 @@
 {
   "userSecretsId": "aspnet-WebApplication2-53c6e5f5-52d8-4498-8802-3f3922ce62c3",
-
+  "version": "1.0.0-*",
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.1.0",
@@ -46,7 +46,7 @@
       "type": "build"
     },
     "AutoMapper": "5.2.0",
-    "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.1.2"
+    "AutoMapper.Extensions.Microsoft.DependencyInjection": "1.1.2"    
   },
 
   "tools": {
